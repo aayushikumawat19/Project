@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "packages/*": ["./packages/*"],
+      "@domains/*": ["./packages/domains/src/*"],
+      "@adapters/*": ["./packages/adapters/src/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["packages"]
+}
