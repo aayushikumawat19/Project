@@ -1,9 +1,10 @@
-import { UserRepository } from '@domains/repositories/interface/UserRepository';
+import type { TUser } from '@domains/entities/User';
+import type { UserRepository } from '@domains/repositories/interface/UserRepository';
 
 export class GetUserUseCase {
-  constructor(private userRepository: UserRepository) {}
+  constructor(private userRepo: UserRepository) {}
 
-  async execute(userId: string) {
-    return this.userRepository.getUserById(userId);
+  async execute(id: string): Promise<TUser> {
+    return await this.userRepo.getUserById(id);
   }
 }

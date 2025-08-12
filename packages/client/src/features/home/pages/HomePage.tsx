@@ -1,8 +1,8 @@
 import React from 'react';
-import { useUser } from '../../../hooks/useUser';
+import { useUser } from '@client/hooks/useUser';
 import { UserCard } from '@client/features/home/components/UserCard';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   const { user, loading } = useUser('1');
 
   if (loading) return <div>Loading...</div>;

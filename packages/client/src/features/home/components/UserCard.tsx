@@ -1,9 +1,9 @@
-import React from 'react';
-import type { UserDTO } from '@domains/dtos/interface/UserDTO';
+import type { IUserDto } from '@domains/dtos/interface/IUserDTO';
 
-export const UserCard = ({ user }: { user: UserDTO }) => (
+export const UserCard = ({ user }: { user: IUserDto }) => (
   <div>
-    <h2>{user.fullName}</h2>
-    <p>ID: {user.id}</p>
+    <p>User ID: {user.userId}</p>
+    <h3>{user.title}</h3>
+    <p>Body: {user.body}</p>
   </div>
 );

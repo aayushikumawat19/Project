@@ -1,11 +1,12 @@
-import { User } from '@domains/entities/User';
-import { UserDTO } from '@domains/dtos/interface/UserDTO';
+import { TUser } from '@domains/entities/User';
+import { IUserDto } from '@domains/dtos/interface/IUserDTO';
 
 export class UserPresenter {
-  static toDTO(user: User): UserDTO {
+  static mapToUserDto(user: TUser): IUserDto {
     return {
-      id: user.id,
-      fullName: user.name,
+      title: user.title,
+      body: user.body,
+      userId: user.userId,
     };
   }
 }

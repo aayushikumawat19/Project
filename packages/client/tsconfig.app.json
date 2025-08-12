@@ -9,10 +9,10 @@
 
     "baseUrl": ".", 
     "paths": {
-      "packages/*": ["../../packages/*"],
-       "@client/*": ["./src/*"],
+      "@shared/*": ["../../packages/shared/src/*"],
+       "@client/*": ["../../packages/client/src/*"],
         "@adapters/*": ["../../packages/adapters/src/*"],
-  "@domains/*": ["../../packages/domains/src/*"]
+        "@domains/*": ["../../packages/domains/src/*"]
     },
 
     /* Bundler mode */

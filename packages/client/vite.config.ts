@@ -4,8 +4,11 @@ import path from 'path';
 export default defineConfig({
   resolve: {
     alias: {
-      '@adapters': path.resolve(__dirname, '../../packages/adapters/src'),
-      '@domains': path.resolve(__dirname, '../../packages/domains/src'),
-    },
-  },
+      '@client': path.resolve(__dirname, 'src'),
+      '@adapters': path.resolve(__dirname, '../adapters/src'),
+      '@domains': path.resolve(__dirname, '../domains/src'),
+      '@shared': path.resolve(__dirname, '../shared/src'),
+      '@config': path.resolve(__dirname, '../config'),
+    }
+  }
 });
