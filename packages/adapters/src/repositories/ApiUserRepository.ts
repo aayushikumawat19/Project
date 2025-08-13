@@ -1,20 +1,20 @@
+import { FetchHTTP } from '@adapters/infrastructures/FetchHTTP';
 import type { TUser } from '@domains/entities/User';
-import { BASE_URL } from '@config/constants';
 
 export class ApiUserRepository {
-  async getUserById(id: string): Promise<TUser> {
-    const response = await fetch(`${BASE_URL}/posts/${id}`);
+  private http: FetchHTTP;
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch user');
-    }
-
-    const data = await response.json();
-
-    return {
-      userId: data.userId,
-      title: data.title,
-      body: data.body,
-    };
+  constructor() {
+    this.http = new FetchHTTP();
   }
+
+  async getUsers(): Promise<TUser[]> {
+    const data = await this.http.get<TUser[]>('/users');
+    return data;
+  }
+
+ async getUserById(id: number) {
+  return await this.http.get(`/posts/${id}`);
+}
+
 }
