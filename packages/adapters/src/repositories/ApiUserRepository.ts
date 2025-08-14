@@ -2,19 +2,13 @@ import { FetchHTTP } from '@adapters/infrastructures/FetchHTTP';
 import type { TUser } from '@domains/entities/User';
 
 export class ApiUserRepository {
-  private http: FetchHTTP;
-
-  constructor() {
-    this.http = new FetchHTTP();
-  }
+  private readonly http = new FetchHTTP();
 
   async getUsers(): Promise<TUser[]> {
-    const data = await this.http.get<TUser[]>('/users');
-    return data;
+    return this.http.get<TUser[]>('/users');
   }
 
- async getUserById(id: number) {
-  return await this.http.get(`/posts/${id}`);
-}
-
+  async getUserById(id: number): Promise<TUser> {
+    return this.http.get<TUser>(`/posts/${id}`);
+  }
 }

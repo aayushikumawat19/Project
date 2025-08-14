@@ -12,7 +12,8 @@
       "@shared/*": ["../../packages/shared/src/*"],
        "@client/*": ["../../packages/client/src/*"],
         "@adapters/*": ["../../packages/adapters/src/*"],
-        "@domains/*": ["../../packages/domains/src/*"]
+        "@domains/*": ["../../packages/domains/src/*"],
+        "@utils/*": ["../../packages/utils/*"]
     },
 
     /* Bundler mode */

@@ -1,11 +1,11 @@
+import type { TUser } from '@domains/entities/User';
 import type { IUserDto } from '@domains/dtos/interface/IUserDTO';
-
 export class UserPresenter {
-  static mapToUserDto(entity: any): IUserDto {
+  static mapToUserDto(user: TUser): IUserDto {
     return {
-      userId: entity.userId,
-      title: entity.title,
-      body: entity.body
+      userId: user.userId,
+      title: user.title,
+      body: user.body,
     };
   }
 }

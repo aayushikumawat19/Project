@@ -12,6 +12,7 @@ export default defineConfig({
       '@domains': path.resolve(__dirname, '../domains/src'),
       '@shared': path.resolve(__dirname, '../shared/src'),   
       '@config': path.resolve(__dirname, '../config'),
+      '@utils': path.resolve(__dirname, '../utils'),
     }
   }
 });

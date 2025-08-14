@@ -13,7 +13,8 @@
       "@client/*": ["./packages/client/src/*"],
       "@domains/*": ["./packages/domains/src/*"],
       "@adapters/*": ["./packages/adapters/src/*"],
-      "@config/*": ["./packages/config/*"]
+      "@config/*": ["./packages/config/*"],
+      "@utils/*": ["./packages/utils/*"]
     }
   },
   "exclude": ["node_modules"],
