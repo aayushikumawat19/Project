@@ -1,0 +1,16 @@
+.container {
+  padding: var(--padding);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background-color: rgb(202, 198, 198);
+}
+
+.title {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+}
+
+.body {
+  color: #333;
+}

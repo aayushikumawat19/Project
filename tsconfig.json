@@ -14,7 +14,8 @@
       "@domains/*": ["./packages/domains/src/*"],
       "@adapters/*": ["./packages/adapters/src/*"],
       "@config/*": ["./packages/config/*"],
-      "@utils/*": ["./packages/utils/*"]
+      "@utils/*": ["./packages/utils/*"],
+      "@mappers/*": ["./packages/mappers"]
     }
   },
   "exclude": ["node_modules"],

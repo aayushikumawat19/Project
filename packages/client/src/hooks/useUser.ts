@@ -1,21 +1,28 @@
-import { useEffect, useState } from 'react';
-import { ApiUserRepository } from '@adapters/repositories/ApiUserRepository';
-import { UserPresenter } from '@adapters/presenters/UserPresenter';
-import type { IUserDto } from '@domains/dtos/interface/IUserDTO';
+import { useState, useEffect, useCallback } from "react";
+import type { IUserDto } from "@domains/dtos/interface/IUserDTO";
+import { ApiUserRepository } from "@adapters/repositories/ApiUserRepository";
 
-export function useUser(id: number) {
+const userRepository = new ApiUserRepository();
+
+export const useUser = (id: number) => {
   const [user, setUser] = useState<IUserDto | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const repo = new ApiUserRepository();
-    repo.getUserById(id)
-      .then(entity => setUser(UserPresenter.mapToUserDto(entity)))
-      .catch((e) => {
-        console.error('useUser error:', e.status, e.msg);
-      })
-      .finally(() => setLoading(false));
+  const fetchUser = useCallback(async () => {
+    setLoading(true);
+    try {
+      const data = await userRepository.getUserById(id);
+      setUser(data);
+    } catch (error) {
+      console.error("Failed to fetch user:", error);
+    } finally {
+      setLoading(false);
+    }
   }, [id]);
 
-  return { user, loading };
-}
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
+
+  return { user, loading, refetch: fetchUser };
+};

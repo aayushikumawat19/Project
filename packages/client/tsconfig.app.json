@@ -13,7 +13,8 @@
        "@client/*": ["../../packages/client/src/*"],
         "@adapters/*": ["../../packages/adapters/src/*"],
         "@domains/*": ["../../packages/domains/src/*"],
-        "@utils/*": ["../../packages/utils/*"]
+        "@utils/*": ["../../packages/utils/*"],
+        "@mappers/*": ["../../packages/mappers/*"]
     },
 
     /* Bundler mode */
